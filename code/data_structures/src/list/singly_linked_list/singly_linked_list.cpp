@@ -9,7 +9,8 @@ public:
 
 void printReverse(Node *head)
 {
-    if (head == nullptr)
+    //if (head == nullptr)
+    if (head == NULL)
         return;
     printReverse(head->next);
     std::cout << head->data << " ";
