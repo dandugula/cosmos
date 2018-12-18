@@ -9,8 +9,7 @@ public:
 
 void printReverse(Node *head)
 {
-    //if (head == nullptr)
-    if (head == NULL)
+    if (head == nullptr)
         return;
     printReverse(head->next);
     std::cout << head->data << " ";
@@ -18,7 +17,8 @@ void printReverse(Node *head)
 
 void push(Node **head_ref, char new_data)
 {
-    auto new_node = (Node *) malloc(sizeof(Node));
+    //auto new_node = (Node *) malloc(sizeof(Node));
+    auto new_node = new Node();
     new_node->data = new_data;
     new_node->next = (*head_ref);
     (*head_ref) = new_node;

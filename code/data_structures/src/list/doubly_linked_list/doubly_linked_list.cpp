@@ -42,7 +42,7 @@ template <class T> int doubleLinkedList<T>::listSize()
 {
     int i = 0;
     node<T> *ptr = head;
-    while (ptr != nullptr)
+    while (nullptr != ptr)
     {
         ++i;
         ptr = ptr->next;
@@ -54,7 +54,7 @@ template <class T> void doubleLinkedList<T>::insertNode(T i, int p)
 {
     node<T> *ptr = new node<T>, *cur = head;
     ptr->info = i;
-    if (cur == nullptr)
+    if (nullptr == cur)
         head = ptr;
     else if (p == 1)
     {
@@ -64,7 +64,7 @@ template <class T> void doubleLinkedList<T>::insertNode(T i, int p)
     }
     else if (p > listSize())
     {
-        while (cur->next != nullptr)
+        while (nullptr != cur->next)
             cur = cur->next;
         cur->next = ptr;
         ptr->pre = cur;
